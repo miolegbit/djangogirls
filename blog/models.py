@@ -8,6 +8,14 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    # computed non-storable field
+    text_short = ""
+
+    # это не работает
+    # def __init__(self, *args, **kwargs):
+    #     #self.text_short = self.text_clip(self.text)
+    #     # calling base class constr does not work
+    #     super().__init__(self, args, kwargs)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -15,3 +23,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def text_clip(self, text:str, size: int = 100):
+        l = text.length
+        if l > size: l = size
+        return text[0:l]
+
+    

@@ -7,29 +7,14 @@
                 {{ post.published_date }}
             </div>
             <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <!-- 
+                мы не используем |linebreaksbr так как мы используем частичный текст; 
+                здесь в template нельзя писать локигу в python;
+            -->
+            <p>{{ post.text_short }}</p>
             <hr/>
         </div>
     {% endfor %}
 {% endblock %}
 
-
-
-
-
-
-            <!-- len = 100 
-                if post.text.length < 100 len = post.text.length
-                post.text[0:len]|linebreaksbr
-                
-            <hr height="10px" color="black"/>
-            <hr style="
-                top: 10px;
-                border: none;
-                height: 1px;
-                background: #ff9400;
-                margin-bottom: 20px;
-                opacity: 50%;
-                "
-            />
-            -->
+ 

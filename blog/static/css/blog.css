@@ -46,12 +46,6 @@ h1, h2, h3, h4 {
 }
 
 hr {
-    /* top: 10px;
-    height: 1px dotted;
+    height: 10px;
     background: #ff9400;
-    margin-bottom: 20px;
-    opacity: 50%;
-    border-radius: 5px; */
-    background-color:#FFFF00;
-    height: 1px;    
 }
